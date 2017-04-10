@@ -9,3 +9,4 @@ Edgar Delgado
 references:
 http://www.cplusplus.com/reference/cstdlib/rand/
 http://stackoverflow.com/questions/10575766/comparison-operator-overloading
+https://www.tutorialspoint.com/cplusplus/cpp_inheritance.htm
