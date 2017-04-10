@@ -13,8 +13,8 @@ class GenBST{
 		bool deleteNode(A key);
 
 		bool isEmpty();
-		int getMin();//leftmost
-		int getMax();//rightmost
+		TreeNode* getMin();//leftmost
+		TreeNode* getMax();//rightmost
 		void inOrder(TreeNode n);
 		void preOrder(TreeNode n);
 		void postOrder(TreeNode n);
@@ -59,8 +59,8 @@ void GenBST<A> :: preOrder(TreeNode n){ // prints f,b,a,d,c,e,g,i,h
 	if (n != NULL)
 	{
 		cout << n->key << endl;
-		postOrder(n->left);
-		postOrder(n->right);
+		preOrder(n->left);
+		preOrder(n->right);
 	}
 } 
 
@@ -93,7 +93,7 @@ TreeNode* GenBST<A> :: getMin(){
 }
 
 template <class A>
-void GenBST :: insert(A value){//can be recursive
+void GenBST<A> :: insert(A value){//can be recursive
 	TreeNode* node = new TreeNode();
 
 	if(root == NULL){ //empty tree
