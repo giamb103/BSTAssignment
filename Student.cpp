@@ -6,44 +6,58 @@ using namespace std;
 Student :: Student(){
 }
 
-Student :: Student(int id, string name, int idAdv, string level, string major, double gpa){
-	this->id = id;
-	this->name = name;
-	advisorID = idAdv;
-	this->level = level;
+Student :: Student(int id, string name, string level, string major, double gpa, int advisorID) : People(id, name, level)
+{
 	this->major = major;
 	this->gpa = gpa;
+	this->advisorID = advisorID;
 }
 
-Student :: ~Student(){
-	cout << "Object destroyed"<<endl;
+Student :: ~Student()
+{
+	//cout << "Student Object destroyed"<<endl;
 }
 
-bool Student :: operator==(Student* a){//compares student id's
-	return id == a->id;g
+bool operator == (Student temp1, Student temp2){//compares student id's
+	return (temp1 == temp2);
 }
 
-bool Student :: operator<(Student* a){//compares student id's
-	return id < a->id;
+bool operator < (Student temp1, Student temp2){//compares student id's
+	return (temp1 < temp2);
 }
 
-bool Student :: operator>(Student* a){//compares student id's
-	return id > a->id;
+bool operator > (Student temp1, Student temp2){//compares student id's
+	return (temp1 > temp2);
 }
 
-bool Student :: operator!=(Student* a){//compares student id's
-	return !(id == a->id);
+bool operator != (Student temp1, Student temp2){//compares student id's
+	return (temp1 != temp2);
+}
+
+/*int getID()
+{
+	return ID;
+}*/
+
+string Student::getMajor()
+{
+	return major;
+}
+
+double Student::getGPA()
+{
+	return gpa;
 }
 
 int Student :: getAdvisorID(){
 	return advisorID;
 }
 
-int Student :: getID(){
-	return id;
-}
-
 void Student :: printStudent(){
-	cout << "Name: " << name <<endl << "\tID: " << id << endl<<"\tAdvisor ID: " << advisorID << endl
-		<< "\tGrade level: " << level << endl << "\tMajor: " << major << endl << "\tGPA: " << gpa;
+	cout << "Name: " << People::name 
+	<< "\tID#: " << People::ID
+	<< "\tGrade level: " << People::level 
+	<< "\tMajor: " << major
+	<< "\tGPA: " << gpa
+	<<"\tAdvisor ID: " << advisorID	<< endl;
 }
