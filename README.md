@@ -1,2 +1,0 @@
-# BSTAssignment
-Data structures assignment
