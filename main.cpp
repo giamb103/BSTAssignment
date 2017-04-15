@@ -10,29 +10,47 @@ void displayMenu();
 int main(int argc, char** argv)
 {
 	int input;
-	int a, b, c; 
-
-	//Faculty masterFaculty;
-	//Student masterStudent;
+	bool continued = true;
 	GenBST<Student> masterStudent;//Student Binary Search Tree
-	Student tempStudent(101, "Edgar Delgado", "Junior", "Software Engineering", 4.0, 001); 
+	GenBST<Faculty> masterFaculty;//Student Binary Search Tree
+	
+	while(continued){
+		displayMenu();
+		cin >> input;
 
-	masterStudent.insert(tempStudent);
-
-
-	a = masterStudent.contains(tempStudent);
-
-	b = masterStudent.isEmpty();
-
-	c = masterStudent.deleteNode(tempStudent.ID);
-
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-
-	//displayMenu();
-	//cin >> input;
-
+		switch(input){
+			case 1:
+				masterStudent.printAll();
+				break;
+			case 2:
+				masterFaculty.printAll();
+				break;
+			case 3:b
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			case 11:
+				break;
+			case 12:
+				break;
+			case 13:
+				break;
+			default:
+				continued = false;
+		}
+	}
 
 
 	return 0;
@@ -53,7 +71,7 @@ void displayMenu()
 	cout << "11. Change a student's advisor given the student id and the new faculty id." << endl;
 	cout << "12. Remove an advisee from a faculty member given the ids" << endl;
 	cout << "13. Rollback" << endl;
-	cout << "14. Exti" << endl;
+	cout << "14. Exit" << endl;
 
 
 }
