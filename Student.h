@@ -28,4 +28,5 @@ class Student : public People
 		int getAdvisorID();
 
 		void printStudent();
+		void printInfo();
 };

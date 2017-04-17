@@ -11,8 +11,8 @@ Faculty::Faculty(int ID, string name, string level, string department) : People(
 }
 
 Faculty::~Faculty()
-{
-	cout << "Faculty Object Destroyed" << endl;
+	{
+	//cout << "Faculty Object Destroyed" << endl;
 }
 
 string Faculty::getDepartment()

@@ -55,9 +55,9 @@ int Student :: getAdvisorID(){
 
 void Student :: printStudent(){
 	cout << "Name: " << People::name 
-	<< "\tID#: " << People::ID
-	<< "\tGrade level: " << People::level 
-	<< "\tMajor: " << major
-	<< "\tGPA: " << gpa
-	<<"\tAdvisor ID: " << advisorID	<< endl;
+	<< "\n\tID#: " << People::ID
+	<< "\n\tGrade level: " << People::level 
+	<< "\n\tMajor: " << major
+	<< "\n\tGPA: " << gpa
+	<<"\n\tAdvisor ID: " << advisorID	<< endl;
 }

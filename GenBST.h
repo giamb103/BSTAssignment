@@ -20,6 +20,9 @@ class GenBST{
 		void inOrder(A* n);
 		void preOrder(A* n);
 		void postOrder(A* n);
+		
+		void printAdv(int idNum);//prints the advisees/advisor of the current node
+		void printNode(int idNum);//prints the info of the student/faculty
 
 		TreeNode<A>* getSuccessor(TreeNode<A>* d);//helper function for delete method
 
@@ -117,7 +120,7 @@ void GenBST<A>::insert(A value){//can be recursive
 		while(true){
 			parent = curr;
 
-			if(node->key < curr->key){//go left
+			if(value.ID < curr->key){//go left
 				curr = curr->left;
 				if(curr == NULL){
 					parent->left = node;
@@ -281,3 +284,61 @@ TreeNode<A>* GenBST<A>::getSuccessor(TreeNode<A>* d)//node to be deleted
 
 }
 
+template <class A>
+void GenBST<A> :: printNode(int idNum)//prints a student/faculty with the given ID
+{
+	if(root == NULL){
+		return false;
+	}
+	else
+	{
+		TreeNode<A>* curr = root;
+		while(curr->key != idNum)
+		{
+			if(idNum < curr->key){
+				curr = curr->left;
+			}
+			else
+			{
+				curr = curr->right;
+			}
+			if(curr == NULL)
+			{
+				cout << "There is no member with that ID." << endl;
+			}
+		}
+
+		curr.print();
+	}	
+}
+
+template <class A>
+void GenBST<A> :: printAdv(int idNum)//prints the advisor of a specific node
+{
+	int tempID;
+	if(root == NULL){
+		return false;
+	}
+	else
+	{
+		TreeNode<A>* curr = root;
+		while(curr->key != idNum)
+		{
+			if(idNum < curr->key){
+				curr = curr->left;
+			}
+			else
+			{
+				curr = curr->right;
+			}
+			if(curr == NULL)
+			{
+				cout << "There is no member with that ID." << endl;
+			}
+		}
+
+		tempID = curr.getAdvisorID();//how to print faculty from here?b
+
+
+	}	
+}
